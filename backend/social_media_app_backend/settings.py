@@ -9,10 +9,10 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e-bi*hm+db^lr-l9t2uef&xp(txzf6k3l0zy(n8_x^wu%*&=%i'
+SECRET_KEY = 'your_secret_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = false
 
 ALLOWED_HOSTS = ['*']
 
@@ -27,20 +27,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', # added
-    # 'rest_framework.authtoken', # added
     'django_cleanup.apps.CleanupConfig',
     'api', # added
 ]
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE' : 3
-    # 'DEFAULT_AUTHENTICATION_CLASSES' : ('rest_framework.authentication.TokenAuthentication')
 }
 
 MIDDLEWARE = [
